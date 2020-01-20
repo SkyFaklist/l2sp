@@ -3,6 +3,7 @@ Use proxy with steam
 
 
 How to use?
+
 Execute with root privileges in the terminal
 
 wget https://raw.githubusercontent.com/SkyFaklist/l2sp/master/l2sh.sh && chmod +x l2sh.sh && bash l2sh.sh
