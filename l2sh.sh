@@ -29,7 +29,6 @@ echo "If you ready,Please look down"
 echo "Press any key to continue/Ctrl+C to Exit..."
 char=`get_char`
 ###########################################Any key enter
-###########################################Root check
 #Address "/etc/alternatives/proxychains"
 echo -e "----------------------------------------------------"
 if [ ! -f "/etc/alternatives/proxychains" ];then
