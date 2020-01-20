@@ -10,4 +10,14 @@ wget https://raw.githubusercontent.com/SkyFaklist/l2sp/master/l2sh.sh && chmod +
 
 It may be a little difficult to set it up, but I believe you can
 
+
+Edit Proxy config
+
+vim /etc/proxychains
+
+type  ip  port [user pass]
+
+For example : socks5  127.0.0.1 1080 admin passwd
+
+
 This project is inseparable from the support of the open source project 'proxychains'
