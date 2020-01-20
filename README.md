@@ -1,4 +1,4 @@
-# l2sp
+# l2sp  Linux2SteamProxy-Shell  Project
 Use proxy with steam
 
 
