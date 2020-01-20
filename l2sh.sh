@@ -1,10 +1,10 @@
 #!/bin/bash
 ##################################Path All
-padd="/etc/alternatives/proxychains"
+padd="/usr/bin/proxychains3"
 pcadd="/etc/proxychains.conf"
 sadd="/usr/share/applications/steam.desktop"
 oldadds="/usr/bin/steam %U"
-newadds="/etc/alternatives/proxychains /usr/bin/steam %U"
+newadds="/usr/bin/proxychains3 /usr/bin/steam %U"
 ##################################Any key pass
 get_char()
 {
@@ -16,9 +16,29 @@ get_char()
     stty echo
     stty $SAVEDSTTY
 }
-#################################Root check
+#################################Config check
+loconfck(){
+if [ ! -f "/root/.config/l2sp/installok" ];then
+	confck
+else
+	main
+fi
+}
+confck(){
+	urlsta=$(curl -s -m 5 -IL "https://raw.githubusercontent.com/SkyFaklist/l2sp/master/proxychains.conf"|grep 200)
+        if [ "$urlstatus" == "" ];then
+	echo "Failed to download the config file"
+	echo "Please check your network"
+	exit;
+else
+        echo"Now loading , we are downloading the config file"
+	wget -P /etc https://raw.githubusercontent.com/SkyFaklist/l2sp/master/proxychains.conf
+        main
+	fi
+}
 #################################Main
 main(){
+      loconfck
 echo "Hello Friend Welcome to install This command."
 echo "This shell can help you ues the proxy in SteamPowered"
 echo "But you must check the authority,it needs root atuhority"
@@ -29,6 +49,7 @@ echo "If you ready,Please look down"
 echo "Press any key to continue/Ctrl+C to Exit..."
 char=`get_char`
 ###########################################Any key enter
+###########################################Root check
 #Address "/etc/alternatives/proxychains"
 echo -e "----------------------------------------------------"
 if [ ! -f "/etc/alternatives/proxychains" ];then
@@ -93,12 +114,12 @@ char=`get_char`
 ########################################Check OK
 #Deff Poxy "socks4  127.0.0.1 9050"
 #Config Address "/etc/proxychains.conf"
-sed -ig "s/socks4/socks$typeproxy/g" /etc/proxychains.conf
+sed -ig "s/socks5/socks$typeproxy/g" /etc/proxychains.conf
 sed -ig "s/127.0.0.1/$addproxy/g" /etc/proxychains.conf
-sed -ig "s/9050/$portproxy/g" /etc/proxychains.conf
+sed -ig "s/1080/$portproxy/g" /etc/proxychains.conf
 echo "Proxy setting (1/2)"
 #Steam Address "/usr/share/applications/steam.desktop"
-sed -ig "s#$oldadds#$newadds#g" /usr/share/applications/steam.desktop
+sed -ig "s#$oldadds#$padd $oldadds#g" /usr/share/applications/steam.desktop
 mkdir /root/.config/l2sp
 dd   if=/dev/zero   of=/root/.config/l2sp/installok   bs=1M   count=2
 echo "Proxy setting (2/2)"
