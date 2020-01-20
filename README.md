@@ -8,12 +8,12 @@ Execute with root privileges in the terminal
 
 #Install with network
 
-wget https://raw.githubusercontent.com/SkyFaklist/l2sp/master/l2sh.sh && chmod +x l2sh.sh && bash l2sh.sh
+  wget https://raw.githubusercontent.com/SkyFaklist/l2sp/master/l2sh.sh && chmod +x l2sh.sh && bash l2sh.sh
 
 
 #Install without network
 
-'''git clone https://github.com/SkyFaklist/l2sp.git''' //Clone file
+git clone https://github.com/SkyFaklist/l2sp.git
 
 cd l2sp
 
