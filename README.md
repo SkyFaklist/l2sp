@@ -6,7 +6,16 @@ How to use?
 
 Execute with root privileges in the terminal
 
+Install with network
 wget https://raw.githubusercontent.com/SkyFaklist/l2sp/master/l2sh.sh && chmod +x l2sh.sh && bash l2sh.sh
+
+
+Install without network
+git clone https://github.com/SkyFaklist/l2sp.git
+cd l2sp
+chmod +x ./l2sh.sh && bash ./l2sh.sh
+
+
 
 It may be a little difficult to set it up, but I believe you can
 
