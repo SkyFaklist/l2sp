@@ -4,6 +4,8 @@ Use proxy with steam
 
 ## How to use?
 
+Zh_TW:[中文使用說明](https://blog.sakurax.org/archives/100.html)  
+
 Execute with root privileges in the terminal
 
 ### Install with network
