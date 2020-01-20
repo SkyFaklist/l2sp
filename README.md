@@ -13,7 +13,7 @@ wget https://raw.githubusercontent.com/SkyFaklist/l2sp/master/l2sh.sh && chmod +
 
 #Install without network
 
-git clone https://github.com/SkyFaklist/l2sp.git
+'''git clone https://github.com/SkyFaklist/l2sp.git''' //Clone file
 
 cd l2sp
 
