@@ -18,9 +18,10 @@ get_char()
 }
 #################################Config check
 loconfck(){
-if [ ! -f "/root/.config/l2sp/installok" ];then
+if [ ! -f "./proxychains.conf" ];then
 	confck
 else
+	cp ./proxychains.conf /etc/
 	main
 fi
 }
@@ -38,7 +39,6 @@ else
 }
 #################################Main
 main(){
-      loconfck
 echo "Hello Friend Welcome to install This command."
 echo "This shell can help you ues the proxy in SteamPowered"
 echo "But you must check the authority,it needs root atuhority"
@@ -135,7 +135,7 @@ reinstall(){
         sed -ig "s#$newadds#$oldadds#g" /usr/share/applications/steam.desktop
 	rm -rf /root/.config/l2sp/
 	rm -rf $pcadd
-	main
+	loconfck
 }
 uninstall(){
 	echo "Press any key to continue/Ctrl+C to Exit..."
@@ -215,7 +215,7 @@ if3(){
 }
 if4(){
 if [ ! -f "/root/.config/l2sp/installok" ];then
-	main
+	loconfck
 else
 echo "You installed this shell , you can set something"
 echo "For example Reinstall , Uninstall , Shutdown or Start"
