@@ -4,9 +4,7 @@ Use proxy with steam
 ## !!!<font color="red">WARN</font>!!!
 
 
-!!!
 <font color="red">This instruction set is only tested and passed on the online Ubuntu 19+ operating system. Other platforms are tested. Please attention!</font>
-!!!
 
 
 
