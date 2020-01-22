@@ -34,7 +34,7 @@ It may be a little difficult to set it up, but I believe you can
 
 ## Edit Proxy config
 ```
-vim /etc/proxychains
+vim /etc/proxychains.conf
 ```
 **type  ip  port [user pass]**
 
